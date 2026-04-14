@@ -1,0 +1,15 @@
+<nav class="pagination" aria-label="Pagination">
+  {%- if paginator.previous_page -%}
+  <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__link">&laquo; Newer</a>
+  {%- else -%}
+  <span class="pagination__link pagination__link--disabled">&laquo; Newer</span>
+  {%- endif -%}
+
+  <span class="pagination__number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+  {%- if paginator.next_page -%}
+  <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__link">Older &raquo;</a>
+  {%- else -%}
+  <span class="pagination__link pagination__link--disabled">Older &raquo;</span>
+  {%- endif -%}
+</nav>

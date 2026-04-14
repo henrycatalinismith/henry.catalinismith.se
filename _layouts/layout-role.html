@@ -1,0 +1,102 @@
+---
+layout: layout-base
+---
+
+{% comment %} Find previous role by slug {% endcomment %}
+{% if page.role.prev %}
+  {% assign prev_role = nil %}
+  {% for role in site.roles %}
+    {% assign role_slug = role.path | split: "/" | last | split: "." | first | split: "-" | slice: 3, 100 | join: "-" %}
+    {% if role_slug == page.role.prev %}
+      {% assign prev_role = role %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% comment %} Find next role by slug {% endcomment %}
+{% if page.role.next %}
+  {% assign next_role = nil %}
+  {% for role in site.roles %}
+    {% assign role_slug = role.path | split: "/" | last | split: "." | first | split: "-" | slice: 3, 100 | join: "-" %}
+    {% if role_slug == page.role.next %}
+      {% assign next_role = role %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<header class="page-header-double layout-role__header">
+  <div class="page-header-double__text">
+    <h1 class="page-header-double__title">{{ page.role.company_name }}</h1>
+    <p class="page-header-double__subtitle">{{ page.role.job_title }}</p>
+    <a class="page-header-double__back-link" href="/cv/">Back to CV</a>
+  </div>
+  {% if page.logo %}
+  <picture class="page-header-double__logo">
+    <source srcset="{{ page.logo[512] }}" media="(min-width: 64rem)" />
+    <img src="{{ page.logo[128] }}" alt="" />
+  </picture>
+  {% endif %}
+</header>
+
+<aside class="layout-role__metadata" aria-label="Role details">
+  <dl class="sidebar-definitions">
+    {% if prev_role %}
+    <dt class="sidebar-definitions__term">Previous role</dt>
+    <dd class="sidebar-definitions__definition">
+      <a href="/cv/{{ page.role.prev }}/">{{ prev_role.role.job_title }} @ {{ prev_role.role.company_name }}</a>
+    </dd>
+    {% endif %}
+
+    <dt class="sidebar-definitions__term">Duration</dt>
+    <dd class="sidebar-definitions__definition">
+      {{ page.role.start | date: "%B %Y" }}
+      –
+      {% if page.role.end %}
+        {{ page.role.end | date: "%B %Y" }}
+      {% else %}
+        Present
+      {% endif %}
+    </dd>
+
+    {% if next_role %}
+    <dt class="sidebar-definitions__term">Following role</dt>
+    <dd class="sidebar-definitions__definition">
+      <a href="/cv/{{ page.role.next }}/">{{ next_role.role.job_title }} @ {{ next_role.role.company_name }}</a>
+    </dd>
+    {% endif %}
+
+    {% if page.role.tech %}
+    <dt class="sidebar-definitions__term">Technologies</dt>
+    <dd class="sidebar-definitions__definition">
+      <ul class="sidebar-definitions__list">
+        {% for tech in page.role.tech %}
+        <li class="sidebar-definitions__list-item">{{ tech }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+    {% endif %}
+
+    {% if page.role.practices %}
+    <dt class="sidebar-definitions__term">Practices</dt>
+    <dd class="sidebar-definitions__definition">
+      <ul class="sidebar-definitions__list">
+        {% for practice in page.role.practices %}
+        <li class="sidebar-definitions__list-item">{{ practice }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+    {% endif %}
+  </dl>
+</aside>
+
+<main class="layout-role__main">
+  {% if page.description %}
+  <div class="layout-role__description prose">
+    <p>{{ page.description }}</p>
+  </div>
+  {% endif %}
+
+  <div class="layout-role__content prose">
+    {{ content }}
+  </div>
+</main>

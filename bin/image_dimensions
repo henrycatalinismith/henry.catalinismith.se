@@ -1,0 +1,124 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Finds images lacking @WIDTHxHEIGHT suffix, renames them with dimensions,
+# and updates all references in markdown/html files.
+
+require "fileutils"
+
+ROOT = File.expand_path("..", __dir__)
+SKIP_DIRS = %w[vendor _site .jekyll-cache].freeze
+IMAGE_EXTENSIONS = %w[.webp .png .jpg .jpeg].freeze
+CONTENT_EXTENSIONS = %w[.md .html].freeze
+
+def find_images_without_dimensions
+  images = []
+  Dir.glob("#{ROOT}/**/*").each do |path|
+    next unless File.file?(path)
+    next if SKIP_DIRS.any? { |dir| path.include?("/#{dir}/") }
+    next unless IMAGE_EXTENSIONS.include?(File.extname(path).downcase)
+    next if path =~ /@\d+x\d+\.\w+$/
+
+    images << path
+  end
+  images
+end
+
+def get_dimensions(path)
+  output = `identify -format "%wx%h" "#{path}" 2>/dev/null`.strip
+  return nil if output.empty?
+
+  output
+end
+
+def find_content_files
+  files = []
+  Dir.glob("#{ROOT}/**/*").each do |path|
+    next unless File.file?(path)
+    next if SKIP_DIRS.any? { |dir| path.include?("/#{dir}/") }
+    next unless CONTENT_EXTENSIONS.include?(File.extname(path).downcase)
+
+    files << path
+  end
+  files
+end
+
+def relative_path(path)
+  path.sub("#{ROOT}/", "")
+end
+
+# Main execution
+images = find_images_without_dimensions
+
+if images.empty?
+  puts "All images already have dimensions in their filenames."
+  exit 0
+end
+
+puts "Found #{images.length} images without dimensions:"
+puts
+
+renames = []
+
+images.each do |old_path|
+  dims = get_dimensions(old_path)
+  unless dims
+    puts "  SKIP: #{relative_path(old_path)} (could not read dimensions)"
+    next
+  end
+
+  dir = File.dirname(old_path)
+  ext = File.extname(old_path)
+  base = File.basename(old_path, ext)
+  new_filename = "#{base}@#{dims}#{ext}"
+  new_path = File.join(dir, new_filename)
+
+  renames << {
+    old_path: old_path,
+    new_path: new_path,
+    old_relative: relative_path(old_path),
+    new_relative: relative_path(new_path)
+  }
+
+  puts "  #{relative_path(old_path)} -> #{new_filename}"
+end
+
+puts
+print "Proceed with renaming? [y/N] "
+answer = $stdin.gets.chomp.downcase
+
+unless answer == "y"
+  puts "Aborted."
+  exit 0
+end
+
+# Rename files
+renames.each do |r|
+  FileUtils.mv(r[:old_path], r[:new_path])
+end
+
+puts "Renamed #{renames.length} files."
+
+# Update references in content files
+puts "Updating references in content files..."
+
+content_files = find_content_files
+updated_count = 0
+
+content_files.each do |path|
+  content = File.read(path)
+  original = content.dup
+
+  renames.each do |r|
+    content.gsub!(r[:old_relative], r[:new_relative])
+  end
+
+  if content != original
+    File.write(path, content)
+    updated_count += 1
+    puts "  Updated: #{relative_path(path)}"
+  end
+end
+
+puts
+puts "Done! Renamed #{renames.length} images, updated #{updated_count} content files."

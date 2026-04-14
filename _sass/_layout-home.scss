@@ -1,0 +1,61 @@
+.layout-home {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--header-content-gap);
+  max-width: 44rem;
+  margin: var(--margin-vertical) auto;
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+}
+
+@media (min-width: 64rem) {
+  .layout-home {
+    display: grid;
+    grid-template-columns: 36rem 24rem;
+    grid-template-rows: auto min-content 1fr;
+    grid-template-areas:
+      "header header"
+      "main badges"
+      "main sidebar";
+    column-gap: 4rem;
+    align-items: start;
+    max-width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.layout-home__header {
+  grid-area: header;
+}
+
+.layout-home__main {
+  grid-area: main;
+  min-width: 0;
+}
+
+.layout-home__sidebar {
+  grid-area: sidebar;
+  display: grid;
+  grid-template-areas: 'heading' '.' 'list';
+  grid-template-rows: auto var(--sidebar-heading-whitespace) auto;
+}
+
+.layout-home__sidebar-heading {
+  grid-area: heading;
+  margin: 0;
+}
+
+.layout-home__tag-list {
+  grid-area: list;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.layout-home__tag-item {
+  font-size: var(--f12);
+}

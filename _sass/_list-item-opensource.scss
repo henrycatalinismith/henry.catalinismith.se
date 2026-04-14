@@ -1,0 +1,21 @@
+.list-item-opensource {
+  display: grid;
+  grid-template-areas: 'title' '.' 'meta';
+  grid-template-rows: auto 0.5rem auto;
+}
+
+.list-item-opensource__title {
+  grid-area: title;
+  font-size: var(--list-item-title-font-size);
+  margin: 0;
+}
+
+.list-item-opensource__meta {
+  grid-area: meta;
+  font-size: var(--list-item-meta-font-size);
+}
+
+.list-item-opensource__icon svg {
+  fill: currentcolor;
+  vertical-align: var(--icon-align);
+}

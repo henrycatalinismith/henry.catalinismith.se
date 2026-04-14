@@ -1,0 +1,28 @@
+.list-item-post {
+  display: grid;
+  grid-template-areas: 'title' '.' 'meta' '.' 'excerpt';
+  grid-template-rows: auto var(--list-item-meta-whitespace) auto var(--list-item-excerpt-whitespace) auto;
+}
+
+.list-item-post__title {
+  grid-area: title;
+  font-size: var(--list-item-title-font-size);
+  margin: 0;
+}
+
+.list-item-post__meta {
+  grid-area: meta;
+  font-size: var(--list-item-meta-font-size);
+}
+
+.list-item-post__icon svg {
+  fill: currentcolor;
+  vertical-align: var(--icon-align);
+}
+
+.list-item-post__excerpt {
+  grid-area: excerpt;
+  font-size: var(--f10);
+  margin: 0;
+  line-height: 1.5rem;
+}

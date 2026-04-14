@@ -1,0 +1,13 @@
+.matrix {
+  pointer-events: none;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--page-header-min-height);
+  fill: black;
+  stroke: rgba(59, 130, 246, 1);
+  mask-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3), transparent);
+  opacity: 0.4;
+}

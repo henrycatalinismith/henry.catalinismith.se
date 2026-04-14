@@ -1,0 +1,144 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Extracts first image from posts and adds to front matter for og:image
+#
+# Usage:
+#   bin/post_images           # dry run (default)
+#   bin/post_images --write   # actually modify files
+
+require 'yaml'
+require 'kramdown'
+require 'nokogiri'
+
+POSTS_DIR = File.expand_path('../_posts', __dir__)
+
+def split_front_matter(text)
+  return [nil, text] unless text.start_with?("---\n")
+
+  parts = text.split("---\n", 3)
+  return [nil, text] if parts.length < 3
+
+  [parts[1], parts[2]]
+end
+
+def find_markdown_image(content)
+  doc = Kramdown::Document.new(content)
+  find_image_in_element(doc.root)
+end
+
+def find_image_in_element(element)
+  return nil unless element.respond_to?(:children)
+
+  element.children.each do |child|
+    if child.type == :img
+      return child.attr['src']
+    end
+
+    result = find_image_in_element(child)
+    return result if result
+  end
+
+  nil
+end
+
+def find_html_image(content)
+  doc = Nokogiri::HTML.fragment(content)
+
+  # Try video poster first
+  video = doc.at_css('video[poster]')
+  return video['poster'] if video
+
+  # Then img src
+  img = doc.at_css('img[src]')
+  return img['src'] if img
+
+  nil
+end
+
+def extract_first_image(content)
+  # HTML images take priority (they appear earlier in mixed content)
+  # But we need to check position, so let's find both and compare
+
+  html_image = find_html_image(content)
+  markdown_image = find_markdown_image(content)
+
+  return html_image if html_image && markdown_image.nil?
+  return markdown_image if markdown_image && html_image.nil?
+  return nil if html_image.nil? && markdown_image.nil?
+
+  # Both exist - find which appears first in content
+  html_pos = content.index(html_image) || Float::INFINITY
+  md_pos = content.index(markdown_image) || Float::INFINITY
+
+  html_pos <= md_pos ? html_image : markdown_image
+end
+
+def insert_image_after_title(front_matter_text, image_url)
+  lines = front_matter_text.lines
+
+  # Find the title line
+  title_index = lines.find_index { |line| line.start_with?('title:') }
+  return front_matter_text unless title_index
+
+  # Insert image line after title
+  image_line = "image: #{image_url}\n"
+  lines.insert(title_index + 1, image_line)
+
+  lines.join
+end
+
+def process_post(path, write:)
+  text = File.read(path)
+  front_matter_text, content = split_front_matter(text)
+
+  return nil unless front_matter_text
+
+  # Parse front matter to check for existing image
+  front_matter = YAML.safe_load(front_matter_text)
+  return nil if front_matter.nil?
+  return nil if front_matter.key?('image')
+
+  # Extract first image from content
+  image_url = extract_first_image(content)
+  return nil unless image_url
+
+  # Build new file content
+  new_front_matter = insert_image_after_title(front_matter_text, image_url)
+  new_text = "---\n#{new_front_matter}---\n#{content}"
+
+  if write
+    File.write(path, new_text)
+  end
+
+  { path: path, image: image_url }
+end
+
+def main
+  write_mode = ARGV.include?('--write')
+
+  puts write_mode ? "Writing changes..." : "Dry run (use --write to apply changes)"
+  puts
+
+  results = []
+
+  Dir.glob(File.join(POSTS_DIR, '*.md')).sort.each do |path|
+    result = process_post(path, write: write_mode)
+    results << result if result
+  end
+
+  if results.empty?
+    puts "No posts to update"
+  else
+    results.each do |result|
+      filename = File.basename(result[:path])
+      puts "#{filename}"
+      puts "  image: #{result[:image]}"
+      puts
+    end
+
+    puts "#{results.length} post(s) #{write_mode ? 'updated' : 'would be updated'}"
+  end
+end
+
+main

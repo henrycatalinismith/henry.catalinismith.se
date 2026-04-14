@@ -1,0 +1,152 @@
+---
+layout: layout-cv
+title: Curriculum Vitae
+permalink: /cv/
+---
+<section class="cv__section cv__roles" aria-labelledby="roles-heading">
+  <h2 class="cv__section-title" id="roles-heading">Roles</h2>
+  {% assign sorted_roles = site.roles | sort: "role.start" | reverse %}
+  <ul class="cv__entries cv__entries--expanded">
+    {% for role in sorted_roles %}
+    <li class="cv-entry cv-entry--role">
+      <div class="cv-entry__row">
+        {% if role.logo %}
+        <img class="cv-entry__image" src="{{ role.logo[128] }}" loading="lazy" alt="">
+        {% endif %}
+        <div class="cv-entry__column">
+          <h3 class="cv-entry__title">{{ role.role.company_name }}</h3>
+          <div class="cv-entry__both">
+            <p class="cv-entry__subtitle">{{ role.role.job_title }}</p>
+            <p class="cv-entry__right-subtitle">
+              {{ role.role.start | date: "%b %Y" }}
+              —
+              {% if role.role.end %}
+                {{ role.role.end | date: "%b %Y" }}
+              {% else %}
+                Present
+              {% endif %}
+            </p>
+          </div>
+          {% if role.description %}
+          <div class="cv-entry__text prose">
+            <p>{{ role.description }}</p>
+            {% if role.role.topics %}
+            <p>
+              <a href="{{ role.url | relative_url }}">Read more about {{ role.role.topics }}</a>
+            </p>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="cv__section cv__open-source" aria-labelledby="open-source-heading">
+    <h2 class="cv__section-title" id="open-source-heading">Open Source</h2>
+    {% assign all_contributions = "" | split: "" %}
+    {% for pr in site.pullrequests %}
+      {% if pr.tags contains "cv" %}
+        {% assign all_contributions = all_contributions | push: pr %}
+      {% endif %}
+    {% endfor %}
+    {% for issue in site.issues %}
+      {% if issue.tags contains "cv" %}
+        {% assign all_contributions = all_contributions | push: issue %}
+      {% endif %}
+    {% endfor %}
+    {% for commit in site.commits %}
+      {% if commit.tags contains "cv" %}
+        {% assign all_contributions = all_contributions | push: commit %}
+      {% endif %}
+    {% endfor %}
+    {% assign sorted_contributions = all_contributions | sort: "date" | reverse %}
+    
+    <ul class="cv__entries cv__entries--compact">
+      {% for item in sorted_contributions %}
+      <li class="cv-entry cv-entry--sidebar">
+        <div class="cv-entry__row">
+          {% if item.logo %}
+          <img class="cv-entry__image" src="{{ item.logo[128] }}" loading="lazy" alt="">
+          {% endif %}
+          <div class="cv-entry__column">
+            <h3 class="cv-entry__title">{{ item.project }}</h3>
+            <div class="cv-entry__both">
+              <a class="cv-entry__subtitle" href="{{ item.external_url }}">{{ item.title }}</a>
+            </div>
+            {% if item.description %}
+            <div class="cv-entry__text prose">{{ item.description }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="cv-entry__text">
+      <a href="/opensource/">More open source contributions</a>
+    </p>
+  </section>
+
+  <section class="cv__section cv__education" aria-labelledby="education-heading">
+    <h2 class="cv__section-title" id="education-heading">Education</h2>
+    {% assign sorted_education = site.education | sort: "start" | reverse %}
+    <ul class="cv__entries cv__entries--compact">
+      {% for item in sorted_education %}
+      <li class="cv-entry cv-entry--sidebar">
+        <div class="cv-entry__row">
+          {% if item.logo %}
+          <img class="cv-entry__image" src="{{ item.logo[128] }}" loading="lazy" alt="">
+          {% endif %}
+          <div class="cv-entry__column">
+            <h3 class="cv-entry__title">{{ item.institution }}</h3>
+            <div class="cv-entry__both">
+              <div class="cv-entry__subtitle">{{ item.qualification }}</div>
+              <p class="cv-entry__right-subtitle">
+                {{ item.start }}
+                —
+                {% if item.end %}
+                  {{ item.end }}
+                {% else %}
+                  Present
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="cv__section cv__certifications" aria-labelledby="certifications-heading">
+    <h2 class="cv__section-title" id="certifications-heading">Certifications</h2>
+    {% assign sorted_certifications = site.certifications | sort: "start" | reverse %}
+    <ul class="cv__entries cv__entries--compact">
+      {% for item in sorted_certifications %}
+      <li class="cv-entry cv-entry--sidebar">
+        <div class="cv-entry__row">
+          {% if item.logo %}
+          <img class="cv-entry__image" src="{{ item.logo[128] }}" loading="lazy" alt="">
+          {% endif %}
+          <div class="cv-entry__column">
+            <h3 class="cv-entry__title">{{ item.institution }}</h3>
+            <div class="cv-entry__both">
+              <div class="cv-entry__subtitle">{{ item.qualification }}</div>
+              <p class="cv-entry__right-subtitle">
+                {{ item.start }}
+                —
+                {% if item.end %}
+                  {{ item.end }}
+                {% else %}
+                  Present
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+  </ul>
+</section>

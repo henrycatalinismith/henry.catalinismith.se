@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Deeplink</title>
+</head>
+
+<body>
+  <h1>Episode Deeplink</h1>
+  <p>You should be automatically sent into the app by this page.</p>
+  <ol>
+    <li><a href="https://example.org">Fallback link 1</a></li>
+    <li><a href="https://example.org">Fallback link 2</a></li>
+  </ol>
+  <script>
+    const channel = {
+      id: '37635be7-f844-4324-bd75-c0d8d1415f22',
+      channelSlug: 'p4-halland',
+    }
+    let blurred = false;
+    let timeout = false;
+    const fallback = () => {
+      if (
+        document.hidden ||
+        document.mshidden ||
+        document.webkitHidden ||
+        blurred ||
+        timeout
+      ) {
+        return;
+      }
+      timeout.current = true;
+      window.top.location =
+        `https://www.sverigesradio.se/nyheter/${channel.channelSlug}`;
+    };
+    window.onblur = () => (blurred = true);
+    window.onfocus = () => (blurred = true);
+    window.top.location = `sesrplay://play/channel/${channel.id}`;
+    setTimeout(fallback, 3000);
+  </script>
+</body>
+
+</html>

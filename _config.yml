@@ -1,0 +1,47 @@
+title: Henry Catalini Smith
+email: henry@catalinismith.se
+description: >-
+  Software engineer based in Malmö, Sweden.
+url: "https://henry.catalinismith.se"
+
+permalink: /:year/:month/:day/:title/
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+feed:
+  posts_limit: 32
+
+paginate: 10
+paginate_path: "/page/:num/"
+
+collections:
+  pullrequests:
+    output: false
+  issues:
+    output: false
+  commits:
+    output: false
+  roles:
+    output: true
+  education:
+    output: false
+  certifications:
+    output: false
+
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

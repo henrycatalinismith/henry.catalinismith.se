@@ -1,0 +1,31 @@
+.page-header-single {
+  text-align: center;
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: var(--page-header-min-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 64rem) {
+  .page-header-single {
+    text-align: left;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.page-header-single__title {
+  font-size: var(--page-header-title-font-size);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0 0 0.5rem;
+}
+
+.page-header-single__subtitle {
+  font-size: var(--page-header-subtitle-font-size);
+  margin: 0;
+}

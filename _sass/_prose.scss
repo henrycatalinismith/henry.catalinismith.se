@@ -1,0 +1,101 @@
+.prose > blockquote,
+.prose > h2,
+.prose > h3,
+.prose > figure,
+.prose > ol,
+.prose > p,
+.prose > pre,
+.prose > table,
+.prose > ul,
+.prose > .highlighter-rouge {
+  width: 100%;
+  max-width: 44rem;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose p {
+  line-height: 1.9rem;
+}
+
+.prose li {
+  line-height: 1.9rem;
+}
+
+.prose > iframe,
+.prose > img,
+.prose > video {
+  max-width: 100%;
+}
+
+.prose ol,
+.prose ul {
+  row-gap: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose figure {
+  margin: 0;
+}
+
+.prose figure img,
+.prose figure video,
+.prose p img,
+.prose p video {
+  max-width: 100%;
+}
+
+.prose blockquote {
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 2px solid #ccddee;
+  font-style: italic;
+}
+
+.prose pre {
+  font-weight: 500;
+  padding: 2rem;
+  overflow-x: auto;
+  border: 1px solid currentcolor;
+  max-width: 100%;
+}
+
+.prose thead th {
+  padding-bottom: 1rem;
+}
+
+.prose thead th:not(:first-child) {
+  padding-inline-start: 1rem;
+}
+
+.prose thead th:not(:last-child) {
+  padding-inline-end: 1rem;
+}
+
+.prose tbody td {
+  line-height: 1.5em;
+  padding-bottom: 1rem;
+}
+
+.prose tbody td:not(:first-child) {
+  padding-inline-start: 1rem;
+}
+
+.prose tbody td:not(:last-child) {
+  padding-inline-end: 1rem;
+}
+
+.prose figcaption {
+  font-size: var(--f10);
+  line-height: 1.3rem;
+}
+
+.prose a {
+  text-decoration: underline;
+}

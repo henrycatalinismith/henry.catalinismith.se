@@ -1,0 +1,35 @@
+.sidebar-definitions {
+  display: grid;
+  font-size: var(--f10);
+  margin: 0;
+}
+
+.sidebar-definitions__term {
+  font-weight: bold;
+  margin-top: var(--sidebar-definitions-definition-whitespace);
+}
+
+.sidebar-definitions__term:first-child {
+  margin-top: 0;
+}
+
+.sidebar-definitions__definition {
+  margin: var(--sidebar-definitions-term-whitespace) 0 0 0;
+}
+
+.sidebar-definitions__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.2rem;
+}
+
+.sidebar-definitions__list-item::after {
+  content: ",\00a0";
+}
+
+.sidebar-definitions__list-item:last-child::after {
+  content: "";
+}

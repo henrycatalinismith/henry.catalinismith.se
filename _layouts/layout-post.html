@@ -1,0 +1,79 @@
+---
+layout: layout-base
+---
+
+{%- comment -%} Find current post index for prev/next navigation {%- endcomment -%}
+{%- assign sorted_posts = site.posts | sort: "date" | reverse -%}
+{%- assign post_index = nil -%}
+{%- for p in sorted_posts -%}
+  {%- if p.url == page.url -%}
+    {%- assign post_index = forloop.index0 -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if post_index != nil -%}
+  {%- assign next_index = post_index | minus: 1 -%}
+  {%- assign prev_index = post_index | plus: 1 -%}
+  {%- if prev_index < sorted_posts.size -%}
+    {%- assign prev_post = sorted_posts[prev_index] -%}
+  {%- endif -%}
+  {%- if next_index >= 0 -%}
+    {%- assign next_post = sorted_posts[next_index] -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- comment -%} Filter tags for display {%- endcomment -%}
+{%- assign filtered_tags = "" | split: "" -%}
+{%- for tag in page.tags -%}
+  {%- unless tag == "blog" or tag == "pullrequest" or tag == "issue" or tag == "commit" or tag == "cv" or tag == "opensource" -%}
+    {%- assign filtered_tags = filtered_tags | push: tag -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+<header class="page-header-single layout-post__header">
+  <h1 class="page-header-single__title">{{ page.title | escape }}</h1>
+  <time class="page-header-single__subtitle" datetime="{{ page.date | date_to_xmlschema }}">
+    {{ page.date | date: "%Y-%m-%d" }}
+  </time>
+</header>
+
+<main class="layout-post__content prose">
+  {{ content }}
+</main>
+
+{% include badges.html %}
+
+<nav class="layout-post__navigation" aria-label="Post navigation">
+  <dl class="sidebar-definitions">
+    {%- if prev_post -%}
+    <dt class="sidebar-definitions__term">Previous post</dt>
+    <dd class="sidebar-definitions__definition">
+      <a href="{{ prev_post.url | relative_url }}">{{ prev_post.title }}</a>
+    </dd>
+    {%- endif -%}
+
+    {%- if next_post -%}
+    <dt class="sidebar-definitions__term">Next post</dt>
+    <dd class="sidebar-definitions__definition">
+      <a href="{{ next_post.url | relative_url }}">{{ next_post.title }}</a>
+    </dd>
+    {%- endif -%}
+
+    {%- if filtered_tags.size > 0 -%}
+    <dt class="sidebar-definitions__term">Tags</dt>
+    <dd class="sidebar-definitions__definition">
+      {%- for tag in filtered_tags -%}
+        <a href="/{{ tag }}/">{{ tag }}</a>{%- unless forloop.last -%}, {% endunless -%}
+      {%- endfor -%}
+    </dd>
+    {%- endif -%}
+  </dl>
+</nav>
+
+<footer class="layout-post__footer">
+  <img src="/2023/02/25/malmo-live-2@128x128.webp" loading="lazy" alt="" class="layout-post__footer-avatar" />
+  <a href="/" class="layout-post__footer-link">
+    Henry Catalini Smith
+  </a>
+</footer>

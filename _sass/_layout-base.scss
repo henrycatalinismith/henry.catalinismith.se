@@ -1,0 +1,16 @@
+.layout-base__content {
+  max-width: 64rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-right: var(--margin);
+  padding-left: var(--margin);
+}
+
+@media (min-width: 64rem) {
+  .layout-base__content {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

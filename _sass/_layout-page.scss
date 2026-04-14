@@ -1,0 +1,31 @@
+.layout-page {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 64rem) {
+  .layout-page {
+    max-width: none;
+    margin: 0;
+  }
+
+  .layout-page__header {
+    text-align: left;
+  }
+}
+
+.layout-page__header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.layout-page__title {
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.layout-page__content {
+  margin-bottom: 2rem;
+  min-width: 0;
+}

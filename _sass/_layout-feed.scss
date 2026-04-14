@@ -1,0 +1,34 @@
+.layout-feed {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--header-content-gap);
+  max-width: 44rem;
+  margin: var(--margin-vertical) auto;
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+}
+
+@media (min-width: 64rem) {
+  .layout-feed {
+    display: grid;
+    grid-template-columns: 36rem 24rem;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "header header"
+      "main badges";
+    column-gap: 4rem;
+    align-items: start;
+    max-width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.layout-feed__header {
+  grid-area: header;
+}
+
+.layout-feed__main {
+  grid-area: main;
+  min-width: 0;
+}
