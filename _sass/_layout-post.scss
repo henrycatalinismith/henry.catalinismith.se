@@ -12,13 +12,12 @@
   .layout-post {
     display: grid;
     grid-template-columns: 36rem 24rem;
-    grid-template-rows: auto min-content 2rem min-content 1fr;
+    grid-template-rows: auto min-content 2rem 1fr;
     grid-template-areas:
       "header header"
       "content badges"
       "content ."
-      "content navigation"
-      "content footer";
+      "content navigation";
     column-gap: 4rem;
     row-gap: 0;
     align-items: start;
@@ -60,13 +59,6 @@
 
 .layout-post__navigation {
   grid-area: navigation;
-}
-
-.layout-post__footer {
-  grid-area: footer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .layout-post__footer-avatar {

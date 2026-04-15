@@ -39,11 +39,13 @@
   display: grid;
   grid-template-areas: 'heading' '.' 'list';
   grid-template-rows: auto var(--sidebar-heading-whitespace) auto;
+  font-size: var(--f10);
 }
 
 .layout-home__sidebar-heading {
   grid-area: heading;
   margin: 0;
+  font-size: var(--f10);
 }
 
 .layout-home__tag-list {
@@ -53,9 +55,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 0.3rem;
 }
 
-.layout-home__tag-item {
-  font-size: var(--f12);
-}
+.layout-home__tag-item {}
