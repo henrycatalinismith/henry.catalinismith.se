@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+title = ARGV[0] || abort("Usage: bin/draft \"Post Title\"")
+slug = title.downcase.strip.gsub(/[^\w\s-]/, "").gsub(/[\s_-]+/, "-").gsub(/^-|-$/, "")
+date = Time.now.strftime("%Y-%m-%d")
+filename = "_posts/#{date}-#{slug}.md"
+
+File.write(filename, <<~FRONTMATTER)
+  ---
+  title: "#{title}"
+  tags: [blog]
+  layout: layout-post
+  ---
+FRONTMATTER
+
+exec("hx", filename)
