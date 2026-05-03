@@ -53,6 +53,11 @@ layout: layout-base
 {%- assign all_tags = all_tags | push: tag -%}
 {%- endfor -%}
 {%- endfor -%}
+{%- for bookmark in site.bookmarks -%}
+{%- for tag in bookmark.tags -%}
+{%- assign all_tags = all_tags | push: tag -%}
+{%- endfor -%}
+{%- endfor -%}
 
 {%- comment -%} Sort and filter tags {%- endcomment -%}
 {%- assign unique_tags = all_tags | uniq | sort -%}
@@ -104,7 +109,7 @@ tag == "opensource" -%}
 {% include badges.html %}
 
 <aside class="layout-tag__sidebar" aria-labelledby="tags-heading">
-  <h2 class="layout-tag__sidebar-heading" id="tags-heading">Tags</h2>
+  <h2 class="layout-tag__sidebar-heading" id="tags-heading">Other Tags</h2>
   <ul class="layout-tag__tag-list">
     {%- for tag in sorted_tags -%}
     {%- assign count = all_tags | where_exp: "t", "t == tag" | size -%}
