@@ -33,6 +33,8 @@ collections:
     output: false
   certifications:
     output: false
+  bookmarks:
+    output: false
 
 # exclude:
 #   - .sass-cache/

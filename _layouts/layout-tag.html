@@ -5,60 +5,66 @@ layout: layout-base
 {%- comment -%} Collect items matching this tag {%- endcomment -%}
 {%- assign all_items = "" | split: "" -%}
 {%- for post in site.posts -%}
-  {%- if post.tags contains page.tag -%}
-    {%- assign all_items = all_items | push: post -%}
-  {%- endif -%}
+{%- if post.tags contains page.tag -%}
+{%- assign all_items = all_items | push: post -%}
+{%- endif -%}
 {%- endfor -%}
 {%- for pr in site.pullrequests -%}
-  {%- if pr.tags contains page.tag -%}
-    {%- assign all_items = all_items | push: pr -%}
-  {%- endif -%}
+{%- if pr.tags contains page.tag -%}
+{%- assign all_items = all_items | push: pr -%}
+{%- endif -%}
 {%- endfor -%}
 {%- for issue in site.issues -%}
-  {%- if issue.tags contains page.tag -%}
-    {%- assign all_items = all_items | push: issue -%}
-  {%- endif -%}
+{%- if issue.tags contains page.tag -%}
+{%- assign all_items = all_items | push: issue -%}
+{%- endif -%}
 {%- endfor -%}
 {%- for commit in site.commits -%}
-  {%- if commit.tags contains page.tag -%}
-    {%- assign all_items = all_items | push: commit -%}
-  {%- endif -%}
+{%- if commit.tags contains page.tag -%}
+{%- assign all_items = all_items | push: commit -%}
+{%- endif -%}
+{%- endfor -%}
+{%- for bookmark in site.bookmarks-%}
+{%- if bookmark .tags contains page.tag -%}
+{%- assign all_items = all_items | push: bookmark -%}
+{%- endif -%}
 {%- endfor -%}
 {%- assign sorted_items = all_items | sort: "date" | reverse -%}
 
 {%- comment -%} Collect all tags from all collections {%- endcomment -%}
 {%- assign all_tags = "" | split: "" -%}
 {%- for post in site.posts -%}
-  {%- for tag in post.tags -%}
-    {%- assign all_tags = all_tags | push: tag -%}
-  {%- endfor -%}
+{%- for tag in post.tags -%}
+{%- assign all_tags = all_tags | push: tag -%}
+{%- endfor -%}
 {%- endfor -%}
 {%- for pr in site.pullrequests -%}
-  {%- for tag in pr.tags -%}
-    {%- assign all_tags = all_tags | push: tag -%}
-  {%- endfor -%}
+{%- for tag in pr.tags -%}
+{%- assign all_tags = all_tags | push: tag -%}
+{%- endfor -%}
 {%- endfor -%}
 {%- for issue in site.issues -%}
-  {%- for tag in issue.tags -%}
-    {%- assign all_tags = all_tags | push: tag -%}
-  {%- endfor -%}
+{%- for tag in issue.tags -%}
+{%- assign all_tags = all_tags | push: tag -%}
+{%- endfor -%}
 {%- endfor -%}
 {%- for commit in site.commits -%}
-  {%- for tag in commit.tags -%}
-    {%- assign all_tags = all_tags | push: tag -%}
-  {%- endfor -%}
+{%- for tag in commit.tags -%}
+{%- assign all_tags = all_tags | push: tag -%}
+{%- endfor -%}
 {%- endfor -%}
 
 {%- comment -%} Sort and filter tags {%- endcomment -%}
 {%- assign unique_tags = all_tags | uniq | sort -%}
 {%- assign sorted_tags = "" | split: "" -%}
 {%- for tag in unique_tags -%}
-  {%- unless tag == "666a" or tag == "pullrequest" or tag == "issue" or tag == "commit" or tag == "cv" or tag == "blog" or tag == "opensource" -%}
-    {%- assign sorted_tags = sorted_tags | push: tag -%}
-  {%- endunless -%}
+{%- unless tag == "666a" or tag == "pullrequest" or tag == "issue" or tag == "commit" or tag == "cv" or tag == "blog" or
+tag == "opensource" -%}
+{%- assign sorted_tags = sorted_tags | push: tag -%}
+{%- endunless -%}
 {%- endfor -%}
 {%- if unique_tags contains "666a" -%}
-  {%- assign sorted_tags = sorted_tags | push: "666a" -%}
+{%- assign sorted_tags = sorted_tags | push: "666a" -%}
 {%- endif -%}
 
 <header class="page-header-single layout-tag__header">
@@ -80,15 +86,17 @@ layout: layout-base
 <main class="layout-tag__main">
   <ul class="post-list">
     {%- for item in sorted_items -%}
-      {%- if item.collection == "posts" -%}
-        {%- include list-item-post.html post=item -%}
-      {%- elsif item.collection == "pullrequests" -%}
-        {%- include list-item-pullrequest.html item=item -%}
-      {%- elsif item.collection == "issues" -%}
-        {%- include list-item-issue.html item=item -%}
-      {%- elsif item.collection == "commits" -%}
-        {%- include list-item-commit.html item=item -%}
-      {%- endif -%}
+    {%- if item.collection == "posts" -%}
+    {%- include list-item-post.html post=item -%}
+    {%- elsif item.collection == "pullrequests" -%}
+    {%- include list-item-pullrequest.html item=item -%}
+    {%- elsif item.collection == "issues" -%}
+    {%- include list-item-issue.html item=item -%}
+    {%- elsif item.collection == "commits" -%}
+    {%- include list-item-commit.html item=item -%}
+    {%- elsif item.collection == "bookmarks" -%}
+    {%- include list-item-bookmark.html item=item -%}
+    {%- endif -%}
     {%- endfor -%}
   </ul>
 </main>
@@ -99,10 +107,10 @@ layout: layout-base
   <h2 class="layout-tag__sidebar-heading" id="tags-heading">Tags</h2>
   <ul class="layout-tag__tag-list">
     {%- for tag in sorted_tags -%}
-      {%- assign count = all_tags | where_exp: "t", "t == tag" | size -%}
-      <li class="layout-tag__tag-item">
-        <a href="/{{ tag }}/">{{ tag }}</a> ({{ count }})
-      </li>
+    {%- assign count = all_tags | where_exp: "t", "t == tag" | size -%}
+    <li class="layout-tag__tag-item">
+      <a href="/{{ tag }}/">{{ tag }}</a> ({{ count }})
+    </li>
     {%- endfor -%}
   </ul>
 </aside>
