@@ -34,7 +34,8 @@ collections:
   certifications:
     output: false
   bookmarks:
-    output: false
+    output: true
+    permalink: /:year/:month/:day/:title/
 
 # exclude:
 #   - .sass-cache/

@@ -4,10 +4,20 @@
   grid-template-rows: auto 0.5rem auto;
 }
 
+.list-item-link--with-content {
+  grid-template-areas: 'title' '.' 'content' '.' 'meta';
+  grid-template-rows: auto 0.5rem auto 0.5rem auto;
+}
+
 .list-item-link__title {
   grid-area: title;
   font-size: var(--list-item-title-font-size);
   margin: 0;
+}
+
+.list-item-link__content {
+  grid-area: content;
+  font-size: var(--f10);
 }
 
 .list-item-link__meta {

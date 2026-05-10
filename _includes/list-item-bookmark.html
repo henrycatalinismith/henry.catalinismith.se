@@ -1,7 +1,16 @@
-<li class="list-item-link">
+<li class="list-item-link{% if include.item.content %} list-item-link--with-content{% endif %}">
   <h2 class="list-item-link__title">
-    <a href="{{ include.item.external_url }}">{{ include.item.title }}</a>
+    <a class="list-item-link__link" href="{{ include.item.url | relative_url }}">
+      {{ include.item.title | escape }}
+    </a>
   </h2>
+
+  {% if include.item.content %}
+  <div class="list-item-link__content prose">
+    {{ include.item.content }}
+  </div>
+  {% endif %}
+
   <span class="list-item-link__meta">
     <span class="list-item-link__icon" aria-hidden="true">
       <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16">

@@ -3,3 +3,5 @@ title: enshittification is what happens when a disney adult learns about captial
 tags: [bookmarks]
 external_url: https://cohost.org/tef/post/3175066-enshittification-is
 ---
+
+Love this post from tef. Instant classic.
