@@ -1,8 +1,15 @@
 ---
 title: Ethicswishing
 tags: [bookmarks]
-external_url: https://berjon.com/ethicswishing/
 layout: layout-post
+bookmark:
+  url: https://berjon.com/ethicswishing/
+  title: Ethicswishing
+  lang: en
+  description: People mean well but ethics is hard. In tech, we have a knack for applying
+    ethics in the most useless ways possible — even when we earnestly want to improve
+    humankind's lot. Why does this matter, why are we failing, and how can we fix
+    it?
 ---
 
 The amazing feeling when someone puts words to something and you immediately recognise it a dozen times over in your own memories.

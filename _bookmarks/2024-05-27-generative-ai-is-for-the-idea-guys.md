@@ -1,7 +1,13 @@
 ---
 title: Generative AI is for the idea guys
 tags: [bookmarks]
-external_url: https://rachsmith.com/ai-is-for-the-idea-guys/
+layout: layout-post
+bookmark:
+  url: https://rachsmith.com/ai-is-for-the-idea-guys/
+  title: Generative AI is for the idea guys
+  author: Rach Smith
+  description: When I started working in tech in the early 2010s I began running in
+    to idea guys.
 ---
 
 Love the feeling of stumbling on a new blog and finding out it’s someone with a vast back catalogue of interesting writing. Got that with this one.

@@ -1,7 +1,12 @@
 ---
 title: Old CSS, new CSS
 tags: [bookmarks]
-external_url: https://eev.ee/blog/2020/02/01/old-css-new-css/
+layout: layout-post
+bookmark:
+  url: https://eev.ee/blog/2020/02/01/old-css-new-css/
+  title: Old CSS, new CSS / fuzzy notepad
+  lang: en
+  author: Eevee
 ---
 
 Quite a comprehensive historical perspective. I remember this!

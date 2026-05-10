@@ -1,7 +1,11 @@
 ---
 title: timelines:protect_and_survive [alternatehistory.com wiki]
 tags: [bookmarks]
-external_url: https://www.alternatehistory.com/wiki/doku.php?id=timelines:protect_and_survive
+layout: layout-post
+bookmark:
+  url: https://www.alternatehistory.com/wiki/doku.php?id=timelines:protect_and_survive
+  title: timelines:protect_and_survive [alternatehistory.com wiki]
+  lang: en
 ---
 
 Haunting alternative history fiction about a nuclear war in the 1980s.

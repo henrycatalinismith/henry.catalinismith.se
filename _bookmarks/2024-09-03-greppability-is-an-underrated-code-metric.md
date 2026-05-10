@@ -1,8 +1,13 @@
 ---
 title: Greppability is an underrated code metric
 tags: [bookmarks]
-external_url: https://morizbuesing.com/blog/greppability-code-metric/
 layout: layout-post
+bookmark:
+  url: https://morizbuesing.com/blog/greppability-code-metric/
+  title: Greppability is an underrated code metric
+  lang: en
+  description: Keeping your codebase searchable will make your maintenance life easier
+    in the long run. A collection of guidelines to keep your code base greppable
 ---
 
 This article focuses on back end development but the same principle also applies to front end. It's why I recommend avoiding [Sass's parent selector](https://sass-lang.com/documentation/style-rules/parent-selector/) in many cases.

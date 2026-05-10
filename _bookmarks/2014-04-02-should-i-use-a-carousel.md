@@ -1,5 +1,9 @@
 ---
 title: Should I Use A Carousel?
 tags: [bookmarks]
-external_url: https://shouldiuseacarousel.com/
+layout: layout-post
+bookmark:
+  url: https://shouldiuseacarousel.com/
+  title: Should I Use A Carousel?
+  lang: en
 ---

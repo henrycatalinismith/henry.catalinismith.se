@@ -1,7 +1,13 @@
 ---
 title: Learning to code with and without AI
 tags: [bookmarks]
-external_url: https://austinhenley.com/blog/learningwithai.html
+layout: layout-post
+bookmark:
+  url: https://austinhenley.com/blog/learningwithai.html
+  title: Learning to code with and without AI - Austin Z. Henley
+  author: Austin Z. Henley
+  description: We studied the impact of AI code generators on novice programmers and
+    how they used the AI.
 ---
 
 This paragraph really jumped out at me here.

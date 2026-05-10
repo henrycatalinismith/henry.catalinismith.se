@@ -1,8 +1,12 @@
 ---
 title: Manifesto for a Humane Web
 tags: [bookmarks]
-external_url: https://humanewebmanifesto.com/
 layout: layout-post
+bookmark:
+  url: https://humanewebmanifesto.com/
+  title: Manifesto for a Humane Web
+  lang: en-GB
+  description: We need to build a better web. A web by and for humans.
 ---
 
 Especially liked this bit from the intro.

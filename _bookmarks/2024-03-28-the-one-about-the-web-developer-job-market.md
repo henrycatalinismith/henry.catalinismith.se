@@ -1,7 +1,11 @@
 ---
 title: The one about the web developer job market
 tags: [bookmarks]
-external_url: https://www.baldurbjarnason.com/2024/the-one-about-the-web-developer-job-market/
+layout: layout-post
+bookmark:
+  url: https://www.baldurbjarnason.com/2024/the-one-about-the-web-developer-job-market/
+  title: The one about the web developer job market
+  lang: en
 ---
 
 Very interesting perspective. Some of the pessimism is a little bit undermined by the software quality crisis stuff in my opinion (I simply don't buy that premise at all), but I found this an insightful piece all the same.

@@ -1,7 +1,14 @@
 ---
 title: Varför är techbolagen så rädda för facken?
 tags: [bookmarks]
-external_url: https://www.youtube.com/watch?v=h9D35BtIKyw
+layout: layout-post
+bookmark:
+  url: https://www.youtube.com/watch?v=h9D35BtIKyw
+  title: Varför är techbolagen så rädda för facken? - YouTube
+  lang: sv-SE
+  description: Klarna fick till slut sitt kollektivavtal. Men på Spotify och Tesla
+    är motståndet fortfarande starkt. Samtidigt som flera kollektivavtal slutits i
+    branschen,...
 ---
 
 Kim Öberg said something that stuck with me during [Arbetsvärlden's panel discussion on the Swedish tech industry's anti-union stance](https://www.youtube.com/watch?v=h9D35BtIKyw) at this year's Almedalsveckan.

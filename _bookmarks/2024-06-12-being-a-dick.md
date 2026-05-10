@@ -1,7 +1,16 @@
 ---
 title: Being a dick
 tags: [bookmarks]
-external_url: https://johan.hal.se/wrote/2024/06/11/being-a-dick/
+layout: layout-post
+bookmark:
+  url: https://johan.hal.se/wrote/2024/06/11/being-a-dick/
+  title: Being a dick
+  description: 'My social media has taken a hard turn for the nerdier since Twitter
+    shut down and everyone with a modicum of moral fibre stopped posting there. So
+    even though I&#39;m not really a Linux developer, I was recently exposed to the
+    drama around Hyprland and its maintainer.
+
+    '
 ---
 
 In this post Johan has touched on something very powerful. In allowing reactionaries to frame the debate about inclusive language, we’ve empowered them to portray themselves as the committed realists and us as the sheltered crybabies.

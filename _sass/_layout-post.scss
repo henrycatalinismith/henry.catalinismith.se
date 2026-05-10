@@ -72,3 +72,29 @@
 .layout-post__footer-link {
   font-size: var(--f10);
 }
+
+.layout-post__bookmark {}
+
+.layout-post__bookmarkHeading {
+  margin: 0 0 1rem 0;
+}
+
+.layout-post__bookmarkLink {
+  font-size: var(--f12);
+}
+
+.layout-post__bookmarkDescription {
+  font-size: var(--f12);
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 2px solid #ccddee;
+  font-style: italic;
+}
+
+.layout-post__bookmarkMeta {
+  margin-top: 1rem;
+}
+
+.layout-post__bookmarkSeparator {
+  margin-bottom: 4rem;
+}

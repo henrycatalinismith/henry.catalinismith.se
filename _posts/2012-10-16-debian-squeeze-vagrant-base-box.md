@@ -1,6 +1,6 @@
 ---
 title: Debian Squeeze Vagrant Base Box
-tags: [blog]
+tags: [blog, devops]
 layout: layout-post
 ---
 

@@ -1,7 +1,15 @@
 ---
 title: The Network State as An Investment Product
 tags: [bookmarks]
-external_url: https://www.shanley.com/blog/the-network-state-as-an-investment-product
+layout: layout-post
+bookmark:
+  url: https://www.shanley.com/blog/the-network-state-as-an-investment-product
+  title: The Network State as An Investment Product — Shanley
+  lang: en-US
+  description: "(If you don’t know what the Network State is,    start here first
+    \  . In short, the Network State is a conspiracy of tech billionaires to start
+    their own nation-state by compromising and seizing the American government and
+    seceding on American soil, building a tech fascist state-within-a-state, as w"
 ---
 
 This line in particular caught my eye.

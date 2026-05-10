@@ -1,8 +1,10 @@
 ---
-title: "The Balkanized Internet: Role of Big Cloud Providers"
-tags: [bookmarks]
-external_url: http://consulting.m3047.net/dubai-letters/balkanized-internet.html
+title: 'The Balkanized Internet: Role of Big Cloud Providers'
+tags: [bookmarks, devops]
 layout: layout-post
+bookmark:
+  url: https://archive.is/aXUNg
+  title: 'Letters to Dubai - The Balkanized Internet: Role of Big Cloud Providers'
 ---
 
 > I am disabling AWS access to my on-prem servers (at least mostly). This is partly an experiment and partly an expediency, as I will explain. (As a technical side note, I'm mostly concerned with TCP traffic and it is possible to distinguish which is the client and which is the server from the initial handshake. I'm blocking connection attempts to my services from clients in AWS. Clients on my network can still establish connections to services hosted in AWS.)

@@ -48,6 +48,12 @@ a[href] {
   color: blue;
 }
 
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid darkslategray;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #06181f;
@@ -56,5 +62,9 @@ a[href] {
 
   a[href] {
     color: deepskyblue;
+  }
+
+  hr {
+    border-top: 1px solid white;
   }
 }

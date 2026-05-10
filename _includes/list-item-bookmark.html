@@ -5,11 +5,11 @@
     </a>
   </h2>
 
-  {% if include.item.content %}
-  <div class="list-item-link__content prose">
-    {{ include.item.content }}
-  </div>
-  {% endif %}
+  {%- if include.item.excerpt -%}
+  <p class="list-item-link__content prose">{{ include.item.excerpt | strip_html | truncatewords: 120 }}</p>
+  {%- elsif include.item.bookmark.description -%}
+  <p class="list-item-link__content prose">{{ include.item.bookmark.description }}</p>
+  {%- endif -%}
 
   <span class="list-item-link__meta">
     <span class="list-item-link__icon" aria-hidden="true">

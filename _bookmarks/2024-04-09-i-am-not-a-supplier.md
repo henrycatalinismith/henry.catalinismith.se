@@ -1,7 +1,16 @@
 ---
 title: I am not a supplier
 tags: [bookmarks]
-external_url: https://www.softwaremaxims.com/blog/not-a-supplier
+layout: layout-post
+bookmark:
+  url: https://www.softwaremaxims.com/blog/not-a-supplier
+  title: I am not a supplier | Musings about software
+  lang: en
+  author: Thomas Depierre
+  description: For the past few years, we have seen a lot of discussions around the
+    concept of the Software Supply Chain. These discussions started around the time
+    of LeftPad and escalated with multiple incidents in the past few years. The problem
+    of all the work in this domain is that it forgets a fundamental point.
 ---
 
 Compelling argument!

@@ -1,7 +1,13 @@
 ---
 title: Engineer Showboating
 tags: [bookmarks]
-external_url: https://morepablo.com/2018/03/engineer-showboating.html
+layout: layout-post
+bookmark:
+  url: https://morepablo.com/2018/03/engineer-showboating.html
+  title: Engineer Showboating
+  lang: en
+  author: Pablo Meier
+  description: How to fake it (in 2010, anyways)
 ---
 
 There’s more of me in this post than I’d prefer.

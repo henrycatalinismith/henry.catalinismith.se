@@ -1,7 +1,11 @@
 ---
 title: '10 Years of Hacker News "Ask HN: Who is hiring" Trends'
 tags: [bookmarks]
-external_url: https://customizedresumes.com/blog/hackernews-who-is-hiring-analysis
+layout: layout-post
+bookmark:
+  url: https://customizedresumes.com/blog/hackernews-who-is-hiring-analysis
+  title: '10 Years of Hacker News "Ask HN: Who is hiring" Trends'
+  lang: en
 ---
 
 Surprised by some of this. The location stuff in particular.

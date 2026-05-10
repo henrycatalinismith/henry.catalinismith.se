@@ -1,5 +1,9 @@
 ---
 title: Falsehoods programmers believe about addresses
 tags: [bookmarks]
-external_url: https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/
+layout: layout-post
+bookmark:
+  url: https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/
+  title: Falsehoods programmers believe about addresses
+  lang: en
 ---

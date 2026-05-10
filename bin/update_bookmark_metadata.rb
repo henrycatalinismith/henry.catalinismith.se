@@ -1,32 +1,41 @@
 #!/usr/bin/env ruby
+require './lib/bookmark'
 require 'yaml'
 require 'httparty'
 require 'nokogiri'
 require 'fileutils'
 
-Dir.glob("bookmarks/*") do |file_path|
+Dir.glob("_bookmarks/*.md") do |file_path|
   next unless File.file?(file_path)
 
   content = File.read(file_path)
-  front_matter, body = content.split('---', 3)[1..2]
-
-  metadata = YAML.safe_load(front_matter)
-  url = metadata['external_url']
+  parts = content.split('---', 3)[1..2]
+  front_matter = parts[0]
+  body = parts[1].strip.chomp
 
   begin
-    response = HTTParty.get(url)
-    html = Nokogiri::HTML(response.body)
+    metadata = YAML.safe_load(front_matter)
+  rescue => e
+    puts file_path
+    raise e
+  end
+  if metadata.nil?
+    puts "No metadata found in #{file_path}"
+  end
+  url = metadata.dig('bookmark', 'url')
 
-    meta_tags = {
-      'author' => html.at('meta[name="author"]')&.[]('content'),
-      'og:title' => html.at('meta[property="og:title"]')&.[]('content')
-    }
+  if metadata.dig('bookmark', 'title')
+    # puts "Skipping #{file_path}"
+    # next
+  end
+  puts parts.inspect
+  puts metadata.inspect
 
-    metadata['bookmark'] ||= {}
-    metadata['bookmark']['url'] = url
-    metadata['bookmark']['meta'] = meta_tags
+  begin
+    metadata = fetch_metadata(url)
+    frontmatter = create_frontmatter(metadata)
 
-    new_content = "---\n#{metadata.to_yaml}---\n#{body}"
+    new_content = "#{frontmatter.to_yaml}---\n\n#{body}".strip.chomp
     File.write(file_path, new_content)
 
     puts "Updated metadata for #{file_path}"

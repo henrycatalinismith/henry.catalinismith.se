@@ -1,7 +1,17 @@
 ---
 title: Why We're Dropping Basecamp
 tags: [bookmarks]
-external_url: https://blogs.library.duke.edu/blog/2023/11/30/why-were-dropping-basecamp/
+layout: layout-post
+bookmark:
+  url: https://blogs.library.duke.edu/blog/2023/11/30/why-were-dropping-basecamp/
+  title: Why We're Dropping Basecamp - Duke University Libraries Blogs
+  lang: en-US
+  author: Will Sexton
+  description: We at Duke University Libraries have decided to stop using the project
+    management platform, Basecamp, to which we have subscribed for almost a decade.
+    We came to this decision after weighing the level of its use in our organization,
+    which is considerable, against the harms that we see perpetuated by the leadership
+    of Basecamp’s parent … Continue reading Why We’re Dropping Basecamp →
 ---
 
 Enjoyed reading a critique like this from outside the software industry.

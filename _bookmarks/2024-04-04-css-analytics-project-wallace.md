@@ -1,7 +1,13 @@
 ---
 title: CSS Analytics - Project Wallace
 tags: [bookmarks]
-external_url: https://www.projectwallace.com/
+layout: layout-post
+bookmark:
+  url: https://www.projectwallace.com/
+  title: CSS Analytics - Project Wallace
+  lang: en
+  description: The best CSS Analyzer on the web. Check your CSS complexity, specificity,
+    performance, design tokens and much more.
 ---
 
 Static analysis for CSS.

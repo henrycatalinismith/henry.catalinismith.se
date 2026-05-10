@@ -1,29 +1,20 @@
 #!/usr/bin/env ruby
 
+require './lib/bookmark'
 require "nokogiri"
 require "net/http"
 require "uri"
 require "fileutils"
 require "cgi"
+require 'yaml'
 
 url = ARGV[0]
 abort "Usage: #{$0} <url>" unless url
 
-uri = URI.parse(url)
-res = Net::HTTP.get_response(uri)
+metadata = fetch_metadata(url)
+frontmatter = create_frontmatter(metadata)
 
-unless res.is_a?(Net::HTTPSuccess)
-  abort "Failed to fetch URL: #{res.code} #{res.message}"
-end
-
-html = res.body
-
-doc = Nokogiri::HTML(html)
-title = doc.at('title')&.text
-abort "Couldn't extract title" unless title
-title = CGI.unescapeHTML(title.gsub(/\s+/, ' ').strip)
-
-slug = title.downcase
+slug = metadata["title"].downcase
   .gsub(/[^a-z0-9\s-]/, '')
   .strip
   .gsub(/\s+/, '-')
@@ -33,13 +24,7 @@ date = Time.now.strftime("%Y-%m-%d")
 dir = "_bookmarks"
 filename = File.join(dir, "#{date}-#{slug}.md")
 
-content = <<~MD
----
-title: #{title}
-tags: [bookmarks]
-external_url: #{url}
----
-MD
+content = "#{frontmatter.to_yaml}---".strip.chomp
 
 File.write(filename, content)
 

@@ -1,7 +1,13 @@
 ---
 title: How I Read Rails Source Code
 tags: [bookmarks]
-external_url: https://www.writesoftwarewell.com/how-to-read-rails-codebase/
+layout: layout-post
+bookmark:
+  url: https://www.writesoftwarewell.com/how-to-read-rails-codebase/
+  title: How I Read Rails Source Code
+  description: This post shows two techniques for reading the Rails codebase. First,
+    we'll learn how to open the gem with bundler and then we'll run tests and insert
+    breakpoints to step through the codebase.
 ---
 
 Worth bookmarking just for the `bundle open gem` tip. But also full of other little bits of wisdom.

@@ -1,7 +1,10 @@
 ---
 title: 'Vim: Seven habits of effective text editing'
 tags: [bookmarks]
-external_url: https://www.moolenaar.net/habits.html
+layout: layout-post
+bookmark:
+  url: https://www.moolenaar.net/habits.html
+  title: 'Vim: Seven habits of effective text editing'
 ---
 
 Rest in peace Bram lad. This article stuck with me from early on and had a big impact on my approch to the everyday labour of coding.

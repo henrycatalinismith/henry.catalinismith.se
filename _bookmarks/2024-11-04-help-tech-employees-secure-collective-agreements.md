@@ -1,8 +1,11 @@
 ---
 title: Help tech employees secure collective agreements
 tags: [bookmarks]
-external_url: https://www.frihet.unionen.se/en/
 layout: layout-post
+bookmark:
+  url: https://www.frihet.unionen.se/en/
+  title: Help tech employees secure collective agreements
+  lang: en
 ---
 
 Love this advocacy network initiative from Unionen. The very clear "union organiser" tone of voice in the text is cool as hell.

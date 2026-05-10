@@ -1,7 +1,13 @@
 ---
-title: 'The LLMentalist Effect: how chat-based Large Language Models rep…'
+title: 'The LLMentalist Effect: how chat-based Large Language Models rep..'
 tags: [bookmarks]
-external_url: https://softwarecrisis.dev/letters/llmentalist/
+layout: layout-post
+bookmark:
+  url: https://softwarecrisis.dev/letters/llmentalist/
+  title: 'The LLMentalist Effect: how chat-based Large Language Models replicate the
+    mechanisms of a psychic''s con'
+  lang: en
+  description: The new era of tech seems to be built on superstitious behaviour
 ---
 
 Very compelling LLM critique based on a comparison with how psychics operate.

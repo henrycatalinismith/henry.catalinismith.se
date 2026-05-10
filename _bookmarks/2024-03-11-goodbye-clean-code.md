@@ -1,7 +1,12 @@
 ---
 title: Goodbye, Clean Code
 tags: [bookmarks]
-external_url: https://overreacted.io/goodbye-clean-code/
+layout: layout-post
+bookmark:
+  url: https://overreacted.io/goodbye-clean-code/
+  title: Goodbye, Clean Code — overreacted
+  lang: en
+  description: Let clean code guide you. Then let it go.
 ---
 
 I read Clean Code myself sometime in the early 2010s. It kicked off a years-long phase of obsessing over things like DRY and refactoring methods into shorter and shorter pieces.

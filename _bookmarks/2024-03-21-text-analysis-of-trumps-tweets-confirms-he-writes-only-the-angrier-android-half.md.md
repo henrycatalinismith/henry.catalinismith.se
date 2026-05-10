@@ -1,7 +1,17 @@
 ---
-title: Text analysis of Trump's tweets confirms he writes only the (angrier) Android half
+title: Text analysis of Trump's tweets confirms he writes only the (angrier) Android
+  half
 tags: [bookmarks]
-external_url: http://varianceexplained.org/r/trump-tweets/
+layout: layout-post
+bookmark:
+  url: http://varianceexplained.org/r/trump-tweets/
+  title: Text analysis of Trump's tweets confirms he writes only the (angrier) Android
+    half – Variance Explained
+  lang: en
+  description: "I don’t normally post about politics (I’m not particularly savvy about
+    polling, which is where data science has had the largest impact on politics).
+    But this weekend I saw a hypothesis about Donald Trump’s twitter account that
+    simply begged to be investigated with data:\n\n"
 ---
 
 Absolute classic piece of data journalism.

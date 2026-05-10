@@ -1,7 +1,11 @@
 ---
 title: Unionen begär förhandling om kollektivavtal på Spotify
 tags: [bookmarks]
-external_url: https://www.unionen.se/pressmeddelande/3344779
+layout: layout-post
+bookmark:
+  url: https://www.unionen.se/pressmeddelande/3344779
+  title: 404 - Sidan hittades inte | Unionen
+  lang: sv
 ---
 
 <blockquote lang="sv">

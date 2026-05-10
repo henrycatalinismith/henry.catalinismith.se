@@ -1,7 +1,12 @@
 ---
-title: "Ask HN: I'm a software engineer going blind, how should I prepare?"
+title: 'Ask HN: I''m a software engineer going blind, how should I prepare?'
 tags: [bookmarks]
-external_url: https://news.ycombinator.com/item?id=22918980
+layout: layout-post
+bookmark:
+  url: https://news.ycombinator.com/item?id=22918980
+  title: 'Ask HN: I''m a software engineer going blind, how should I prepare? | Hacker
+    News'
+  lang: en
 ---
 
 Fascinating discussion initiated by an engineer preparing for vision loss resulting from an Usher syndrome diagnosis. This reply has stuck with me:
