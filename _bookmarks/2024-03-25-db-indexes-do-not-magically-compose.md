@@ -1,6 +1,6 @@
 ---
 title: DB Indexes Do Not Magically Compose
-tags: [bookmarks]
+tags: [bookmarks, databases]
 layout: layout-post
 bookmark:
   url: https://rtpg.co/2024/04/14/db-indexes-do-not-magically-compose/

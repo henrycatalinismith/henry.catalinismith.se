@@ -1,6 +1,6 @@
 ---
 title: My SQLite in production epiphany
-tags: [blog, devtools, webdev]
+tags: [blog, databases, devtools, webdev]
 layout: layout-post
 ---
 

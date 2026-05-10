@@ -1,6 +1,6 @@
 ---
 title: SQLite & Rails in Production
-tags: [bookmarks, devops]
+tags: [bookmarks, databases, devops]
 layout: layout-post
 bookmark:
   url: https://fly.io/ruby-dispatch/sqlite-and-rails-in-production/

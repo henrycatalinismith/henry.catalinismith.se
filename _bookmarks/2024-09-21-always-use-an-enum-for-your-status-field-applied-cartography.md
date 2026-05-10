@@ -1,6 +1,6 @@
 ---
 title: Always use an enum for your status field
-tags: [bookmarks]
+tags: [bookmarks, databases]
 layout: layout-post
 bookmark:
   url: https://jmduke.com/posts/post/enums/

@@ -1,6 +1,6 @@
 ---
 title: The UX of UUIDs
-tags: [bookmarks]
+tags: [bookmarks, databases]
 layout: layout-post
 bookmark:
   url: https://www.unkey.com/blog/uuid-ux

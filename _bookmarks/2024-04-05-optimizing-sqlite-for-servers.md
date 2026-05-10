@@ -1,6 +1,6 @@
 ---
 title: Optimizing SQLite for servers
-tags: [bookmarks, devops]
+tags: [bookmarks, databases, devops]
 layout: layout-post
 bookmark:
   url: https://kerkour.com/sqlite-for-servers

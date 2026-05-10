@@ -1,6 +1,6 @@
 ---
 title: Tracking SQLite Database Changes in Git
-tags: [bookmarks]
+tags: [bookmarks, databases]
 layout: layout-post
 bookmark:
   url: https://garrit.xyz/posts/2023-11-01-tracking-sqlite-database-changes-in-git

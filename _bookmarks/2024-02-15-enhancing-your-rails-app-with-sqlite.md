@@ -1,6 +1,6 @@
 ---
 title: Enhancing your Rails app with SQLite
-tags: [bookmarks]
+tags: [bookmarks, databases]
 layout: layout-post
 bookmark:
   url: https://dev.to/fractaledmind/series/24516

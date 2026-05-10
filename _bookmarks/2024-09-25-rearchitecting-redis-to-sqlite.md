@@ -1,6 +1,6 @@
 ---
 title: 'Rearchitecting: Redis to SQLite'
-tags: [bookmarks, devops]
+tags: [bookmarks, databases, devops]
 layout: layout-post
 bookmark:
   url: https://wafris.org/blog/rearchitecting-for-sqlite

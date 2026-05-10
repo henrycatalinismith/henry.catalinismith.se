@@ -1,6 +1,6 @@
 ---
 title: Oracle Database 12.2. It is close to 25 million lines of C code
-tags: [bookmarks]
+tags: [bookmarks, databases]
 layout: layout-post
 bookmark:
   url: https://news.ycombinator.com/item?id=18442941
