@@ -18,6 +18,7 @@
 .list-item-link__content {
   grid-area: content;
   font-size: var(--f10);
+  word-break: break-word;
 }
 
 .list-item-link__meta {
