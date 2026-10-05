@@ -4,7 +4,7 @@ tags: [blog, codeberg]
 layout: layout-post
 ---
 
-Codeberg was all over the tech news for a week or two this summer, after members voted to amend the terms of service to prohibit projects that mostly consist of code written by "generative AI"-tools. The debate that followed was surprisingly heated. I’m one of the majority of members who voted in favour of the amendment and I was really happy to see it pass.
+Codeberg was all over the tech news for a week or two this summer, after members voted to [amend the terms of service](https://blog.codeberg.org/protecting-our-floss-commons-from-llms.html) to prohibit projects that mostly consist of code written by "generative AI"-tools. The debate that followed was surprisingly heated. I’m one of the majority of members who voted in favour of the amendment and I was really happy to see it pass.
 
 The level of outrage about it surprised me, to be honest. And don’t get me wrong, I definitely understand disagreeing with the decision itself. It’s going against the biggest industry trend most of us have ever experienced. But there was a level of anger on display that seemed out of place. Some of the reaction went well beyond disagreement into open contempt, with prominent YouTubers mocking Codeberg representatives as though they'd somehow forgotten that both the policy and the leadership team are the result of democratic votes by the membership.
 
