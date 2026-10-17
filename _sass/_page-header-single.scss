@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 0.5rem;
+  row-gap: 0.65rem;
 }
 
 @media (min-width: 64rem) {
@@ -21,12 +21,14 @@
 
 .page-header-single__title {
   font-size: var(--page-header-title-font-size);
-  letter-spacing: -1px;
-  line-height: 1;
+  letter-spacing: var(--page-header-title-letter-spacing);
+  line-height: 0.96;
   margin: 0;
 }
 
 .page-header-single__subtitle {
   font-size: var(--page-header-subtitle-font-size);
+  line-height: var(--page-header-subtitle-line-height);
   margin: 0;
+  opacity: var(--page-header-subtitle-opacity);
 }

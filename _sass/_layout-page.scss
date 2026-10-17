@@ -20,9 +20,9 @@
 }
 
 .layout-page__title {
-  letter-spacing: -1px;
-  line-height: 1;
-  margin-bottom: 0.5rem;
+  letter-spacing: var(--page-header-title-letter-spacing);
+  line-height: 0.96;
+  margin-bottom: 0.65rem;
 }
 
 .layout-page__content {

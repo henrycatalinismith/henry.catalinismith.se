@@ -20,20 +20,22 @@
   grid-area: text;
   display: flex;
   flex-direction: column;
-  row-gap: 0.5rem;
+  row-gap: 0.65rem;
 }
 
 .page-header-double__title {
   font-size: var(--page-header-title-font-size);
-  letter-spacing: -1px;
-  line-height: 1;
+  letter-spacing: var(--page-header-title-letter-spacing);
+  line-height: 0.96;
   margin: 0;
 }
 
 .page-header-double__subtitle {
   font-size: var(--page-header-subtitle-font-size);
+  line-height: var(--page-header-subtitle-line-height);
   margin: 0;
   font-weight: normal;
+  opacity: var(--page-header-subtitle-opacity);
 }
 
 .page-header-double__back-link {
