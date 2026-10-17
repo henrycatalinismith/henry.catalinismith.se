@@ -1,7 +1,7 @@
 ---
 title: Testing in JAWS on a Mac
 image: /2026/03/25/jaws@1024x726.webp
-tags: [accessibility, blog, forgejo]
+tags: [accessibility, blog, devtools]
 layout: layout-post
 ---
 

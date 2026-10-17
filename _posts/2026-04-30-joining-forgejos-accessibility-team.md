@@ -1,6 +1,6 @@
 ---
 title: "Joining Forgejo’s Accessibility Team"
-tags: [accessibility, blog, codeberg, forgejo, webdev]
+tags: [accessibility, blog, webdev, devtools]
 layout: layout-post
 ---
 

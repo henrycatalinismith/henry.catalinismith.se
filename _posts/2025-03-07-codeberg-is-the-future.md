@@ -1,6 +1,6 @@
 ---
 title: Codeberg Is The Future
-tags: [blog, codeberg, devtools]
+tags: [blog, devtools]
 layout: layout-post
 ---
 

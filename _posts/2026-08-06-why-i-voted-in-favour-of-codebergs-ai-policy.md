@@ -1,6 +1,6 @@
 ---
 title: Why I voted in favour of Codeberg’s AI policy
-tags: [blog, codeberg]
+tags: [blog, devtools]
 layout: layout-post
 ---
 

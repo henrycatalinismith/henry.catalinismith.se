@@ -1,7 +1,7 @@
 ---
 title: Accessing localhost:3000 in VirtualBox for NVDA testing on macOS
 image: /2026/04/01/nvda@1024x724.webp
-tags: [accessibility, blog, forgejo, webdev]
+tags: [accessibility, blog, webdev, devtools]
 layout: layout-post
 ---
 

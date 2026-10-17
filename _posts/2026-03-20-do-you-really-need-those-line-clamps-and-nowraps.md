@@ -1,7 +1,7 @@
 ---
 title: Do you really need those line-clamps and nowraps?
 image: /2026/03/20/100@1026x1200.webp
-tags: [blog, accessibility, forgejo, webdev]
+tags: [blog, accessibility, webdev, devtools]
 layout: layout-post
 ---
 

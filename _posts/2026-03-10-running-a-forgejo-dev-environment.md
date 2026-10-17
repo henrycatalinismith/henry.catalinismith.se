@@ -1,7 +1,7 @@
 ---
 title: Running a Forgejo dev environment
 image: /2026/03/10/localhost3000@2158x1162.webp
-tags: [blog, codeberg, devtools, forgejo]
+tags: [blog, devtools]
 layout: layout-post
 ---
 

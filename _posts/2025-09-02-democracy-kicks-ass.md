@@ -1,6 +1,6 @@
 ---
 title: Democracy Kicks Ass
-tags: [blog, codeberg, devtools]
+tags: [blog, devtools]
 layout: layout-post
 description: >
   Contrasting the sense of helplessness about Microsoft's agenda for GitHub with

@@ -1,7 +1,7 @@
 ---
 title: Inspecting HTML elements that disappear on blur
 image: /2026/03/28/no@1000x544.webp
-tags: [accessibility, blog, forgejo, webdev]
+tags: [accessibility, blog, webdev, devtools]
 layout: layout-post
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Golang LSP in Helix on macOS
 image: /2026/03/12/error@1024x518.webp
-tags: [blog, devtools, forgejo]
+tags: [blog, devtools]
 layout: layout-post
 ---
 

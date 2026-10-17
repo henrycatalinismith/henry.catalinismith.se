@@ -1,7 +1,7 @@
 ---
 title: Voting on Codeberg's new privacy policy
 image: /2025/07/29/fb-hoax@619x348.webp
-tags: [blog, codeberg]
+tags: [blog, devtools]
 layout: layout-post
 ---
 

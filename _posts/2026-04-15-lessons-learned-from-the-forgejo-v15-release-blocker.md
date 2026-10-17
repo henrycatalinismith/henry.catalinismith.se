@@ -1,7 +1,7 @@
 ---
 title: Lessons learned from the Forgejo v15 release blocker
 image: /2026/04/15/demo@1024x620.webp
-tags: [blog, accessibility, devtools, forgejo]
+tags: [blog, accessibility, devtools]
 layout: layout-post
 ---
 
