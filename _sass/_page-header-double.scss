@@ -10,7 +10,7 @@
   align-items: center;
   justify-items: center;
   text-align: center;
-  row-gap: 2rem;
+  row-gap: 1.75rem;
   max-width: 44rem;
   margin: 0 auto;
   min-height: var(--page-header-min-height);
@@ -42,13 +42,19 @@
 
 .page-header-double__logo {
   grid-area: logo;
+  display: inline-flex;
+  padding: 0.35rem;
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35) inset, 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
 .page-header-double__logo img {
+  display: block;
   border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 0 2px grey;
   width: 6rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 64rem) {
@@ -65,12 +71,13 @@
 
   .page-header-double__logo {
     justify-self: end;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.12) inset, 0 12px 30px rgba(15, 23, 42, 0.08);
   }
 
   .page-header-double__logo img {
-    border-radius: 0;
-    border: 1px solid white;
-    box-shadow: 0 0 2px grey;
+    border-radius: 0.75rem;
     width: 100%;
     max-width: 24rem;
   }
