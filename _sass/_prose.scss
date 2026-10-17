@@ -20,6 +20,12 @@
   margin-bottom: 0;
 }
 
+.prose h2,
+.prose h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
 .prose p {
   line-height: 1.9rem;
 }
@@ -52,7 +58,7 @@
 }
 
 .prose blockquote {
-  margin: 0;
+  margin: 1.75rem 0;
   padding: 0 0 0 1.5rem;
   border-left: 2px solid #ccddee;
   font-style: italic;
