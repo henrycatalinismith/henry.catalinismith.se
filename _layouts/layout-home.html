@@ -74,7 +74,7 @@ tag == "opensource" -%}
     {%- for tag in sorted_tags -%}
     {%- assign count = all_tags | where_exp: "t", "t == tag" | size -%}
     <li class="layout-home__tag-item">
-      <a href="/{{ tag }}/">{{ tag }}</a> ({{ count }})
+      <a class="tag-pill" href="/{{ tag }}/">{{ tag }} <span class="tag-pill__count">{{ count }}</span></a>
     </li>
     {%- endfor -%}
   </ul>
