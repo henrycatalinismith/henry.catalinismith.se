@@ -10,7 +10,7 @@ programming tricks' that I can no longer find. It involves the `switch`
 statement, which is fairly universal in programming languages and normally looks
 like this:
 
-```
+```javascript
 switch (name) {
  case 'henry':
   tabWidth = 8
@@ -28,10 +28,10 @@ It's generally used to compare one variable, given in parentheses after the
 statements. The alternative usage of it that I've been very occasionally
 employing looks like this:
 
-```
+```javascript
 switch (true) {
  case name.length >= 20:
- case name.match(/\d{3}):
+ case name.match(/\d{3}/):
  case name.indexOf('test'):
  case name === 'special_case':
   do_this();
@@ -58,7 +58,7 @@ starts executing. Consider that
 [the normal alternative](http://framework.zend.com/manual/en/coding-standard.coding-style.html#coding-standard.coding-style.control-statements.if-else-elseif)
 to my above example would look like this:
 
-```
+```javascript
 if (name.length >= 20
  || name.match(/\d{3}/)
  || name.indexOf('test')
@@ -81,7 +81,7 @@ guaranteed to be either a conjunction or disjunction, and no amount of
 parentheses can overcome this simplification. For example, take this slight
 variation on the above code snippet:
 
-```
+```javascript
 if (name.length >= 20
  || (name.match(/\d{3}/)
  && name.indexOf('test'))
@@ -91,12 +91,13 @@ if (name.length >= 20
 
 Using a `switch (true)` statement, it would look like much clearer:
 
-```
+```javascript
 switch (true) {
  case name.length >= 20:
  case name.match(/\d{3}/) && name.indexOf('test'):
  case name === 'special_case':
 }
+```
 ```
 
 ## The Bad

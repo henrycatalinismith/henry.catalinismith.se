@@ -97,7 +97,8 @@ Nice! Sounds like a great all-purpose flakiness vaccine to me.
 
 For our example test, that means that it ends up looking like this.
 
-```
+```javascript
+```javascript
 const one = page.locator("text=one");
 const two = page.locator("text=two");
 const three = page.locator("text=three");

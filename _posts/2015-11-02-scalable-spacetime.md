@@ -28,7 +28,7 @@ Earth has a vector of 30000 horizontally and 0 vertically, then each tick of
 this method counts as one second of motion in my imaginary 2D universe, and it
 moves the earth along by 30km each time.
 
-```
+```javascript
 class Motion {
   affect (universe) {
   universe.planets.map((planet) => {
@@ -77,7 +77,7 @@ they can multiply their results by that. For motion, that just means multiplying
 the planet’s vector by the number of seconds elapsed before adding it to the
 planet’s position.
 
-```
+```javascript
 class Motion {
   affect (universe, seconds) {
   universe.planets.map((planet) => {

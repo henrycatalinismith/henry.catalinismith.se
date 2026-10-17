@@ -51,7 +51,7 @@ that will wait 2 seconds before printing the HTML of the element you're
 interested in, then you race over to get the UI into the state you're curious
 about in time for the timeout to fire.
 
-```
+```javascript
 setTimeout(() =>
  console.log(
   document

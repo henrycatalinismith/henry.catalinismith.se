@@ -21,7 +21,7 @@ complexity well enough that it makes it look extremely simple.
 A first iteration of a very basic templating library would probably read
 template source code from a file on disk, like so.
 
-```
+```php
 return file_get_contents("$templateName.twig");
 ```
 
@@ -89,7 +89,7 @@ why I think DHH is a little too extreme in
 [his criticism of it](http://david.heinemeierhansson.com/2012/dependency-injection-is-not-a-virtue.html).
 Twig is a clear example where DI has made the API better, not worse.
 
-```
+```php
 $loader = new Twig_Loader_String;
 $twig = new Twig_Environment($loader);
 echo $twig->render('Hello !', array('name' => 'Fabien'));

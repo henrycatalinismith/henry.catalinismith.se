@@ -11,27 +11,27 @@ Here's my notes!
 
 First up, we need `go`, `node` and `postgresql` installed.
 
-```
+```bash
 $ brew install go node postgresql@18
 ```
 
 Then we need to clone the repo.
 
-```
+```bash
 $ git clone ssh://git@codeberg.org/forgejo/forgejo.git
 $ cd forgejo
 ```
 
 The frontend and backend dependencies need to be downloaded.
 
-```
+```bash
 $ npm install
 $ go mod download
 ```
 
 Then we build everything and cross our fingers for no erros.
 
-```
+```bash
 $ make frontend
 $ make backend
 ```
@@ -40,7 +40,7 @@ The Postgres database needs some special care. This was the most time-consuming
 part of the process for me. It took a bit of trial and error to understand that
 I needed to do all this stuff.
 
-```
+```text
 $ brew services start postgresql@18
 ==> Successfully started `postgresql@18` (label: homebrew.mxcl.postgresql@18)
 $ createuser -s postgres
@@ -59,7 +59,7 @@ GRANT
 
 Now all that's left is to fire up the server.
 
-```
+```bash
 $ go run . -w $(pwd)
 ```
 

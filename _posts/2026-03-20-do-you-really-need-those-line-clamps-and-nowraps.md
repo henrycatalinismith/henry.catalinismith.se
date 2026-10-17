@@ -30,7 +30,7 @@ you're disabling text reflow on your element's text content in favour of one
 long line. Tailwind's `truncate` class demonstrates the most commonly used
 nowrap setup.
 
-```
+```css
 .truncate {
   white-space: nowrap;
   overflow: hidden;

@@ -50,7 +50,7 @@ across the room and I'd know how it was going without looking.
 
 First up: some constant high pitched beeping.
 
-```
+```javascript
 setInterval(() => {
   sfx(pow2(9), "triangle", pow2(8))
 }, pow2(10))
@@ -78,7 +78,7 @@ and annoying sound, but it had to compete with the noise from two small kids.
 The most common thing to happen after reloading the page was for no appointments
 to be found. This needed a noise too.
 
-```
+```javascript
 sfx(20, "square", 500)
   .then(() => wait(10))
   .then(() => sfx(40, "square", 4000))
@@ -104,7 +104,7 @@ Sometimes there would be an appointment a few towns away. As long as it was late
 enough to get there in time by train this was great news! A nice high pitched
 alert sound announced this scenario.
 
-```
+```javascript
 sfx(600, "sawtooth", 400)
   .then(() => wait(10))
   .then(() => sfx(400, "sawtooth", 420))
@@ -127,7 +127,7 @@ sfx(600, "sawtooth", 400)
 The best case scenario was an appointment here in Malmö. A triumphant little
 chirp was the sound for this.
 
-```
+```javascript
 sfx(400, "triangle", 500)
   .then(() => wait(10))
   .then(() => sfx(500, "triangle", 220))

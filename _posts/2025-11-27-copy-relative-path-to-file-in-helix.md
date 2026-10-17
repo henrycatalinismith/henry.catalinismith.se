@@ -23,7 +23,7 @@ That being said, the one missing step is the ability to copy the current file's
 relative path to the clipboard so that it can be pasted into some git command in
 another tab. This proved possible to implement as a keybinding as follows.
 
-```
+```toml
 [keys.normal.space.z]
 p = ":sh echo \"%{buffer_name}\" | pbcopy"
 ```

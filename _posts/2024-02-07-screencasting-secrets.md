@@ -154,7 +154,7 @@ QuickTime will output a fairly chunky `.mov` file at the end of this. I tend to
 use `ffmpeg` to scale these down and convert them to `.mp4`. This will often cut
 the file size from tens or hundreds of megabytes down into the 1MB-ish range.
 
-```
+```bash
 ffmpeg -i words.mov -vf "scale=iw/2:ih/2" words.mp4
 ```
 

@@ -114,7 +114,7 @@ By now I was using the right gravity equation. But I had to subtract the result
 from 0 to make it work. Again, no idea why. It was just something I did at one
 point to see if it helped, and it did, so I left it in.
 
-```
+```javascript
 const acceleration = 0 - (
   (G * subject.mass) /
   (Math.pow(distance, 2))

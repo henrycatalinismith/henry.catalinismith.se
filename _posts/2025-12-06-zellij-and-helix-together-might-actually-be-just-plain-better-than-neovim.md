@@ -26,7 +26,7 @@ For most of my career my workflow to read the commit log for a file has been to
 and then paste that into a terminal command. With Zellij and Helix I can
 automate that with config like this.
 
-```
+```toml
 [keys.normal.backspace]
 h = ":sh zellij run --close-on-exit -f -x=1%% -y=4%% --width=99%% --height=92%% -- lazygit --filter \"%{buffer_name}\""
 ```

@@ -27,7 +27,7 @@ Take a quick look at the commit which added Coveralls to ppl. It's a tiny
 commit, and seemingly harmless. To my great surprise, it broke the build on
 Travis CI. And which test did it break?
 
-```
+```text
 Failures:
 
 1) Ppl::Format::Table#to_s should colorize columns if requested

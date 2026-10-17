@@ -15,7 +15,7 @@ important early milestone was to get the Golang LSP running in Helix.
 You can always check if Helix's LSP integration for a given language is ready by
 using `hx --health`.
 
-```
+```text
 $ hx --health go
 Configured language servers:
   ✘ gopls: 'gopls' not found in $PATH
@@ -31,7 +31,7 @@ Indent queries: ✓
 
 Those ✘ symbols are bad news! Installing those missing tools looked like this.
 
-```
+```bash
 go install golang.org/x/tools/gopls@latest
 go install github.com/nametake/golangci-lint-langserver@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
@@ -46,13 +46,13 @@ Then there was one last little trick necessary. Those things that `go install`
 downloaded live in `~/go/bin`, which isn't in `$PATH`. I threw a Fish plugin at
 the problem, like this.
 
-```
+```fish
 fisher install halostatue/fish-go@v2
 ```
 
 After that, I had ✓ across the board.
 
-```
+```text
 $ hx --health go
 Configured language servers:
   ✓ gopls: /Users/henrycatalinismith/go/bin/gopls

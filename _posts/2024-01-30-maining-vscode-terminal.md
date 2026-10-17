@@ -23,7 +23,7 @@ of brackets and tags and such. Some people love this. For me it just feels like
 that Sorcerer's Apprentice scene with the out-of-control magic brooms in
 Fantasia, so I gotta turn it all off.
 
-```
+```jsonc
 "editor.autoClosingBrackets": "never",
 "editor.autoClosingDelete": "never",
 "editor.autoClosingOvertype": "never",
@@ -54,7 +54,7 @@ background color that the text became effectively invisible? Crank up this
 setting to 4.5 and VSCode will automatically detect and fix that whenever it
 happens.
 
-```
+```jsonc
 "terminal.integrated.minimumContrastRatio": 4.5,
 ```
 
@@ -65,7 +65,7 @@ grays and oranges. VSCode makes it real easy to patch this though. I tend to
 just duplicate the regular palette, and then trust the magic of the minimum
 contrast ratio setting to fix any trouble this causes.
 
-```
+```jsonc
 "workbench.colorTheme": "Solarized Dark",
 "workbench.colorCustomizations": {
   "gitlens.trailingLineForegroundColor": "#93a1a1",
@@ -92,7 +92,7 @@ forth between the editor and the terminal easily. The following
 `keybindings.json` entries configure ⌘&darr; to focus the terminal and ⌘&uarr;
 to focus the editor.
 
-```
+```jsonc
 {
 	"key": "cmd+up",
 	"command": "workbench.action.focusActiveEditorGroup",
@@ -111,7 +111,7 @@ contexts a terminal can be open in: either the panel, or the editor area. The
 default keyboard controls for these two contexts are different, and the
 following `keybindings.json` entries standardise them across both.
 
-```
+```jsonc
 {
   "key": "cmd+t",
   "command": "workbench.action.terminal.newInActiveWorkspace",
@@ -131,7 +131,7 @@ following `keybindings.json` entries standardise them across both.
   "key": "cmd+w",
   "command": "workbench.action.terminal.killEditor",
   "when": "terminalEditorFocus"
-},
+}
 ```
 
 Another quality of life thing is to have ^⇥ and ^⇧⇥ always mean "focus next tab"
@@ -141,7 +141,7 @@ through terminal tabs instead of editor tabs. The defaults here are a _long_ way
 from this. This next bit of config makes ^⇥ and ^⇧⇥ do the right thing no matter
 what's focused.
 
-```
+```jsonc
 {
   "key": "ctrl+tab",
   "command": "workbench.action.nextEditor"
@@ -187,7 +187,7 @@ whatever bit of UI you were working in. The keybindings here detect whether
 you're invoking the shortcuts from inside a terminal or not, and ensure you land
 back where you started.
 
-```
+```jsonc
 {
   "key": "cmd+shift+right",
   "when": "terminalFocus",
@@ -241,7 +241,7 @@ though. If I'm in a terminal in a bottom panel, I want ⌘⇧&uarr; to move it i
 the editor area, hide the panel, and focus the terminal. This next bit of config
 makes that happen.
 
-```
+```jsonc
 {
   "key": "cmd+shift+up",
   "when": "terminalFocus",
@@ -259,7 +259,7 @@ makes that happen.
 For the reverse scenario, when I want to clear away my editor area terminal back
 down into the panel, this entry makes ⌘⇧&darr; do that.
 
-```
+```jsonc
 {
   "key": "cmd+shift+down",
   "when": "terminalEditorFocus",
@@ -301,7 +301,7 @@ pull request, merged 4 days ago, titled
 OMFG! So when that commit makes it into a shipped build, the config line to use
 it will be like this.
 
-```
+```jsonc
 "workbench.startupEditor": "terminal",
 ```
 

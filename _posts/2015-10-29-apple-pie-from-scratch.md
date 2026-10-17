@@ -16,7 +16,7 @@ convention like SI units, it makes the code so much more readable. I find names
 like distanceInKm or massInKg super ugly. It’s nicer if you can use distance and
 mass and just infer the units from the convention.
 
-```
+```javascript
 class Planet {
   constructor ({ mass, position, radius }) {
   this.mass = mass;
@@ -52,7 +52,7 @@ also needs to know which part of the universe it’s centered on, which I pass i
 as an object called center with an x and a y property. Because x and y are
 spatial values, you can just assume they’re in meters. See how nice that is?
 
-```
+```javascript
 class Viewport {
   constructor({ center, context, scale }) {
   this.center = center; // { x, y }
@@ -79,7 +79,7 @@ of the planet, and multiply the results by the scale property from earlier. This
 gives you the pixel position of the planet within the canvas. The resulting code
 is really heavy on arithmetic and took a while to get right.
 
-```
+```javascript
 drawPlanet (planet) {
   const { width, height } = this.context.canvas;
   const topLeft = new Point(

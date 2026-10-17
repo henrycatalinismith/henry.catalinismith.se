@@ -45,7 +45,7 @@ domain of vagrantup.com.
 Vagrant requires Ruby, RubyGems, Puppet, Chef and an SSH server to be present on
 the machine in order for it to work as a base box. To install these, I did this:
 
-```
+```bash
 wget -O- http://opscode.com/chef/install.sh | bash
 ```
 
@@ -57,7 +57,7 @@ Debian helpfully detects that you're installing it in VirtualBox and installs a
 bunch of related packages for you. We don't want them though, and they have to
 be removed in order to install the proper guest additions.
 
-```
+```bash
 apt-get remove --purge virtualbox-ose-guest-x11
 apt-get autoremove
 apt-get remove --purge virtualbox-ose-guest-utils
@@ -73,7 +73,7 @@ There's a button in VirtualBox that effectively inserts the guest additions as
 an imaginary CD-ROM. After pressing that, the commands to actually install them
 were as follows:
 
-```
+```bash
 apt-get install module-assistant
 mount /media/cdrom
 sh /media/cdrom/VBoxLinuxAdditions.run
@@ -88,7 +88,7 @@ security model in order to make it convenient as a testing environment. The
 guidelines stipulate passwordless sudo privileges, which entails installing sudo
 and then immediately breaking off the locks.
 
-```
+```bash
 apt-get install sudo sudo
 visudo
 ```
@@ -103,7 +103,7 @@ The standard vagrant username is 'vagrant', with password 'vagrant'. I set this
 user account up during Debian installation, but there was more to it than that.
 The user must be added to the admin group.
 
-```
+```bash
 groupadd admin
 usermod -G admin vagrant
 ```
@@ -117,7 +117,7 @@ using their standard
 [insecure SSH key pair](http://github.com/mitchellh/vagrant/tree/master/keys/)
 which vagrant will use by default when connecting.
 
-```
+```bash
 sudo apt-get install openssh-server
 wget https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub
 mkdir /home/vagrant/.ssh
@@ -134,7 +134,7 @@ quick `/etc/init.d/ssh` restart.
 With everything configured correctly, the next step was to turn off the VM and
 export it.
 
-```
+```bash
 vagrant package --base debiansqueeze squeeze32.box
 ```
 
@@ -144,7 +144,7 @@ The name debiansqueeze there is what I named the VM itself in VirtualBox.
 
 After that the box was ready to roll. Just gotta add it to Vagrant.
 
-```
+```bash
 vagrant box add squeeze32 ~/squeeze32.box
 ```
 

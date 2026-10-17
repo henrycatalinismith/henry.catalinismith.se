@@ -32,7 +32,7 @@ Since the moon is cool as fuck right now, let's see if we can hype some more
 people up into making their terminals do this. First up, you need `phoon` and
 `lolcat`. 
 
-```
+```bash
 brew install phoon lolcat
 ```
 
@@ -42,7 +42,7 @@ that cool rainbow moon as the splash screen for every new terminal you open
 for the rest of your life is to pipe phoon into lolcat.
 
 
-```
+```bash
 phoon | lolcat
 ```
 
@@ -50,7 +50,7 @@ You can chuck that into `~/.zshrc` or `~/.bashrc` and you're good to go. I've
 been using [fish](https://fishshell.com/) lately, where this sort of thing
 belongs in [`fish_greeting`](https://fishshell.com/docs/current/cmds/fish_greeting.html).
 
-```
+```fish
 function fish_greeting
   phoon | lolcat
 end
