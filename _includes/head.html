@@ -3,6 +3,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
+  {%- if paginator and paginator.page > 1 -%}
+  <meta name="robots" content="noindex, follow">
+  {%- endif -%}
   <link rel="stylesheet" href="{{ "/style.css" | relative_url }}">
   {% feed_meta %}
 </head>
