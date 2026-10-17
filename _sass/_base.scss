@@ -30,6 +30,9 @@
   --page-header-subtitle-font-size: var(--f14);
   --page-header-subtitle-line-height: 1.45;
   --page-header-subtitle-opacity: 0.82;
+  --prose-body-line-height: 2rem;
+  --prose-paragraph-spacing: 1.2rem;
+  --prose-heading-spacing: 3rem;
   --code-inline-background: rgba(253, 246, 227, 0.92);
   --code-inline-border: rgba(147, 161, 161, 0.35);
   --code-block-background: rgba(253, 246, 227, 0.72);
@@ -38,6 +41,8 @@
   --media-frame-border: rgba(15, 23, 42, 0.12);
   --media-frame-inner: rgba(255, 255, 255, 0.65);
   --media-frame-shadow: rgba(15, 23, 42, 0.08);
+  --blockquote-background: rgba(223, 236, 245, 0.65);
+  --blockquote-border: rgba(100, 116, 139, 0.22);
   --page-header-min-height: 24rem;
 }
 
@@ -82,6 +87,11 @@ code {
     --media-frame-border: rgba(131, 148, 150, 0.28);
     --media-frame-inner: rgba(255, 255, 255, 0.08);
     --media-frame-shadow: rgba(0, 0, 0, 0.35);
+    --blockquote-background: rgba(0, 43, 54, 0.72);
+    --blockquote-border: rgba(131, 148, 150, 0.22);
+    --prose-body-line-height: 2rem;
+    --prose-paragraph-spacing: 1.2rem;
+    --prose-heading-spacing: 3rem;
   }
 
   a[href] {

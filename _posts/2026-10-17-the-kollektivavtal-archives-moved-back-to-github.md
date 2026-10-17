@@ -16,9 +16,9 @@ The other reason was reliability, which admittedly might be a little unfair of m
 
 One last reason was the CI at GitHub. I built a pretty nice CI workflow into the kollektivavtal archive so that I can just upload a PDF and have it autoindexed on the site. Never felt super comfortable porting it over to Codeberg in case the bandwidth and disk usage of the PDFs could be a problem for the infra.
 
-> **Resource usage must be reasonable for the intended use-case.**
-> CI requires substantial computing resources (cloning the repo and pulling the image, installing required tools, building and throwing everything away). Therefore, please consider twice how to create a good balance between ensuring code quality for your project and resource usage.
-> https://docs.codeberg.org/ci/
+> **Resource usage must be reasonable for the intended use-case.**<br />
+> CI requires substantial computing resources (cloning the repo and pulling the image, installing required tools, building and throwing everything away). Therefore, please consider twice how to create a good balance between ensuring code quality for your project and resource usage.<br />
+> [https://docs.codeberg.org/ci/](https://docs.codeberg.org/ci/)
 
 The above read like a closed door to me. Having to hand crank the build system and deploy every new PDF manually more or less doubled the workload of maintaining the site and led to me loving the project less and spending less time on it.
 
