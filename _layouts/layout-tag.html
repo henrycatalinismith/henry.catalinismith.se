@@ -24,11 +24,7 @@ layout: layout-base
 {%- assign all_items = all_items | push: commit -%}
 {%- endif -%}
 {%- endfor -%}
-{%- for bookmark in site.bookmarks-%}
-{%- if bookmark .tags contains page.tag -%}
-{%- assign all_items = all_items | push: bookmark -%}
-{%- endif -%}
-{%- endfor -%}
+
 {%- assign sorted_items = all_items | sort: "date" | reverse -%}
 
 {%- comment -%} Collect all tags from all collections {%- endcomment -%}
@@ -50,11 +46,6 @@ layout: layout-base
 {%- endfor -%}
 {%- for commit in site.commits -%}
 {%- for tag in commit.tags -%}
-{%- assign all_tags = all_tags | push: tag -%}
-{%- endfor -%}
-{%- endfor -%}
-{%- for bookmark in site.bookmarks -%}
-{%- for tag in bookmark.tags -%}
 {%- assign all_tags = all_tags | push: tag -%}
 {%- endfor -%}
 {%- endfor -%}
@@ -99,8 +90,7 @@ tag == "opensource" -%}
     {%- include list-item-issue.html item=item -%}
     {%- elsif item.collection == "commits" -%}
     {%- include list-item-commit.html item=item -%}
-    {%- elsif item.collection == "bookmarks" -%}
-    {%- include list-item-bookmark.html item=item -%}
+
     {%- endif -%}
     {%- endfor -%}
   </ul>

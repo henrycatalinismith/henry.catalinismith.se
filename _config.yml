@@ -34,9 +34,6 @@ collections:
     output: false
   certifications:
     output: false
-  bookmarks:
-    output: true
-    permalink: /:year/:month/:day/:title/
 
 # exclude:
 #   - .sass-cache/
@@ -54,10 +51,5 @@ defaults:
   - scope:
       path: ""
       type: roles
-    values:
-      sitemap: false
-  - scope:
-      path: ""
-      type: bookmarks
     values:
       sitemap: false
