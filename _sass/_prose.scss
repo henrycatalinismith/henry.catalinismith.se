@@ -66,10 +66,20 @@
 
 .prose pre {
   font-weight: 500;
-  padding: 2rem;
+  padding: 1.5rem;
   overflow-x: auto;
-  border: 1px solid currentcolor;
+  border: 1px solid var(--code-block-border);
+  background: var(--code-block-background);
+  border-radius: 0.75rem;
   max-width: 100%;
+}
+
+.prose pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 .prose thead th {
@@ -104,4 +114,11 @@
 
 .prose a {
   text-decoration: underline;
+}
+
+.prose :not(pre) > code {
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--code-inline-border);
+  border-radius: 0.35rem;
+  background: var(--code-inline-background);
 }

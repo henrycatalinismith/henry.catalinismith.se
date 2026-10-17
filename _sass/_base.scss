@@ -30,6 +30,10 @@
   --page-header-subtitle-font-size: var(--f14);
   --page-header-subtitle-line-height: 1.45;
   --page-header-subtitle-opacity: 0.82;
+  --code-inline-background: rgba(59, 130, 246, 0.08);
+  --code-inline-border: rgba(59, 130, 246, 0.14);
+  --code-block-background: rgba(15, 23, 42, 0.03);
+  --code-block-border: rgba(15, 23, 42, 0.12);
   --page-header-min-height: 24rem;
 }
 
@@ -56,6 +60,10 @@ hr {
   border: none;
   border-top: 1px solid darkslategray;
   opacity: 0.7;
+}
+
+code {
+  font-size: 0.95em;
 }
 
 @media (prefers-color-scheme: dark) {
