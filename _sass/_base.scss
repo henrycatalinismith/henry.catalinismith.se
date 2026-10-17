@@ -34,6 +34,10 @@
   --code-inline-border: rgba(147, 161, 161, 0.35);
   --code-block-background: rgba(253, 246, 227, 0.72);
   --code-block-border: rgba(147, 161, 161, 0.28);
+  --media-frame-background: rgba(255, 255, 255, 0.82);
+  --media-frame-border: rgba(15, 23, 42, 0.12);
+  --media-frame-inner: rgba(255, 255, 255, 0.65);
+  --media-frame-shadow: rgba(15, 23, 42, 0.08);
   --page-header-min-height: 24rem;
 }
 
@@ -74,6 +78,10 @@ code {
     --code-inline-border: rgba(131, 148, 150, 0.35);
     --code-block-background: rgba(0, 43, 54, 0.72);
     --code-block-border: rgba(131, 148, 150, 0.28);
+    --media-frame-background: rgba(0, 43, 54, 0.88);
+    --media-frame-border: rgba(131, 148, 150, 0.28);
+    --media-frame-inner: rgba(255, 255, 255, 0.08);
+    --media-frame-shadow: rgba(0, 0, 0, 0.35);
   }
 
   a[href] {
